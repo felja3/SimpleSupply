@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "items")
 @Data
@@ -17,7 +19,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "item_id")
-    private int item_id;
+    private Long item_id;
 
     @Column(name = "item_name", length = 25, nullable = false, unique = true)
     private String item_name;
@@ -25,6 +27,9 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+   @Column(name = "item_stock")
+    private int stock;
 
     public Item() {
 
