@@ -53,5 +53,16 @@ Core frontend functonality is implemented. It is able to request data from backe
 
 For now it is missing UI and button functionality, but it will be implemented in the next steps.
 
+### Fith Commit #5
+
+<img width="516" height="170" alt="add_page_react" src="https://github.com/user-attachments/assets/6087c60c-c683-4dcf-8c36-07763f18b5cd" />
+
+
+Add fuctionality was implemented in new page. 
+It calls post method from springboot and passes the parameters inputed from the web page /add. 
+Changes are displayed in the dashboard.
+
+
+
   
 
