@@ -14,7 +14,6 @@ function Dashboard() {
     <div>
       <h1>Dashboard</h1>
       <button onClick={()=> navigate("/add")}>Add </button>
-      <button>Edit</button>
       <ItemTable items={items} />
     </div>
   )

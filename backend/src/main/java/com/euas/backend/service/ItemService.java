@@ -15,17 +15,15 @@ public class ItemService {
     private final ItemRepository repository;
     private final CategoryRepository categoryRepository;
 
-
-
     public ItemService(ItemRepository repository, CategoryRepository categoryRepository) {
         this.repository = repository;
         this.categoryRepository = categoryRepository;
     }
+
     public List<Item> getAllItems() {
-
         return repository.findAll();
-
     }
+
     public Item addItem(String name, String categoryName, int stock){
         Item item = new Item();
         item.setItem_name(name);
@@ -47,4 +45,23 @@ public class ItemService {
     }
 
 
+    public Item updateItem(Long id, String name, String categoryName, int stock) {
+        Item item = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Item not found"));
+
+        Optional<Category> optionalCategory = categoryRepository.findByCategoryName(categoryName);
+        Category category;
+
+        if(optionalCategory.isPresent()){
+            category = optionalCategory.get();
+        }else {
+            Category newCategory = new Category();
+            newCategory.setCategoryName(categoryName);
+            category = categoryRepository.save(newCategory);
+        }
+        item.setItem_name(name);
+        item.setCategory(category);
+        item.setStock(stock);
+        return repository.save(item);
+    }
 }

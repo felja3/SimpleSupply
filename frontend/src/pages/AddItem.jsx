@@ -28,7 +28,7 @@ function AddItem() {
         <h1>Create a new item</h1>
         <form onSubmit={handleSubmit}>
         <div>
-        <label>Name of item</label>
+        <label>Name of item </label>
             <input 
                 type ="text"
                 value={name}
@@ -36,7 +36,7 @@ function AddItem() {
                 />
         </div>
         <div>
-        <label>Category of item</label>
+        <label>Category of item </label>
             <input 
                 type="text"
                 value={category}
@@ -44,7 +44,7 @@ function AddItem() {
             />
         </div>
         <div>
-        <label>Stock amount of item</label>
+        <label>Stock amount of item </label>
             <input 
                 type="number"
                 value={stock}
@@ -52,8 +52,9 @@ function AddItem() {
             />
         </div>
         <button type="submit">create</button>
-        <button type="button"onClick={()=>navitage("/")}>cancel</button>
+        
         </form>
+        <button type="button"onClick={()=>navitage("/")}>back</button>
     </div>
   )
   
