@@ -24,7 +24,13 @@ For this step successful connectivity with PostgreSQL is established.
 Service layer retrieves all rows, which is one of main functions.
 
 For now DTO is not used, but it will be implemented in the next step of creating new Items.
+### Third Commit #3 
+Service functionality improved:
 
+* Item creation function is added Service.
+* Logic of creating a new category along with an item if this category didn't exist before.
+* Category Repository.
+* AddItem controlled which takes 3 parameters. 
 
 
 
