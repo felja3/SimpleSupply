@@ -6,6 +6,7 @@ import com.euas.backend.service.ItemService;
 import org.springframework.web.bind.annotation.*;
 
     @RestController
+    @CrossOrigin(origins = "http://localhost:5173")
     public class addItemController {
         public ItemService itemService;
         public addItemController(ItemService itemService) {
