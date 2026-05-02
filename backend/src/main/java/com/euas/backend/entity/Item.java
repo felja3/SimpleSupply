@@ -24,12 +24,14 @@ public class Item {
     @Column(name = "item_name", length = 25, nullable = false, unique = true)
     private String item_name;
 
+    @Column(name = "item_stock")
+    private int stock;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
 
-   @Column(name = "item_stock")
-    private int stock;
+
 
     public Item() {
 

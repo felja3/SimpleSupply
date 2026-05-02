@@ -1,7 +1,7 @@
 package com.euas.backend.controller;
 
 import com.euas.backend.entity.Item;
-import com.euas.backend.service.DashboardService;
+import com.euas.backend.service.ItemService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +10,8 @@ import java.util.List;
 @RequestMapping("/items")
 public class ItemController {
 
-    public final DashboardService dashboard;
-    public  ItemController(DashboardService dashboard){
+    public final ItemService dashboard;
+    public  ItemController(ItemService dashboard){
         this.dashboard = dashboard;
     }
 
