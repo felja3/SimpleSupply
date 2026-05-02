@@ -1,13 +1,13 @@
 # Simple Supply - warehouse management system
 
 <img width="863" height="394" alt="supply_simple_goal" src="https://github.com/user-attachments/assets/23be9e12-61f7-414d-94b4-8a95624922b2" />
-Figma template of future frontend, simplified. 
+Templated of future frontend.
 
 ### User Stories: 
 
-Young Entrepreneur looking for managing products storage application. 
-Small warehouse owner/employee with need for a simple inventory system.
-Collector who need to track valuable belongings. 
+* Young Entrepreneur looking for managing products storage application. 
+* Small warehouse owner/employee with need for a simple inventory system.
+* Collector who need to track valuable belongings. 
 
 ### First commit #1
 
@@ -58,9 +58,24 @@ For now it is missing UI and button functionality, but it will be implemented in
 <img width="516" height="170" alt="add_page_react" src="https://github.com/user-attachments/assets/6087c60c-c683-4dcf-8c36-07763f18b5cd" />
 
 
-Add fuctionality was implemented in new page. 
-It calls post method from springboot and passes the parameters inputed from the web page /add. 
+Add - fuction to add new item to the table
+Then button is pressed new page appears. It calls post method from springboot and passes the parameters inputed from the web page /add. 
 Changes are displayed in the dashboard.
+
+### Sixth Commit #6
+
+<img width="446" height="191" alt="edit_page_react" src="https://github.com/user-attachments/assets/b6a23cbe-7bb1-450a-a249-eec035a3629a" />
+
+
+Edit - change existing item's values. 
+By clicking on a row in a dashboard a new page is opened. On this page is shown
+* Current values of item in the input field
+* Input field to edit item
+* edit button to submit
+By clicking edit button PUT method is called, which was implemented in itemSerivce in both frontend and backend.
+
+
+
 
 
 
