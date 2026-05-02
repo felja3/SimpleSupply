@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/items")
+@CrossOrigin(origins = "http://localhost:5173")
 public class ItemController {
 
     public final ItemService dashboard;

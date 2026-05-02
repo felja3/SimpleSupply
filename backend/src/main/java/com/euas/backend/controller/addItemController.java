@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.*;
                 @RequestParam int stock){
             return itemService.addItem(name,categoryName,stock);
         }
-        @PutMapping("/id/stock/")
+        /*@PutMapping("/id/stock/")
         public Item updateStock(
             @RequestParam String name,
             @RequestParam int stock
         ){
-            return itemService.updateStock();
-        }
+            return itemService.get();
+        }*/
 }
 
