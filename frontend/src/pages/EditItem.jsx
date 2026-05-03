@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { updateItem } from "../services/itemService"
+import {Form,Button, Container}  from "react-bootstrap"
 
 function EditItem(){
 const navigate = useNavigate()
@@ -31,36 +32,40 @@ function handleNameChange(event){
 
 return(
     <div> 
-       <h1>Edit an item</h1>
-        <form onSubmit={handleSubmit}>
+       <Container className="mt-3 ms-3 w-25 " >
+        <h1>Edit an item</h1>
+        <Form onSubmit={handleSubmit}>
         <div>
-        <label>Name : </label>
-            <input 
+        <Form.Label>Name : </Form.Label>
+            <Form.Control 
                 type ="text"
                 value={name}
                 onChange={handleNameChange}
                 />
         </div>
         <div>
-        <label>Category : </label>
-            <input 
+        <Form.Label>Category : </Form.Label>
+            <Form.Control 
                 type="text"
                 value={category}
                 onChange={handleCategoryChange}
             />
         </div>
         <div>
-        <label>Stock : </label>
-            <input 
+        <Form.Label>Stock : </Form.Label>
+            <Form.Control 
                 type="number"
                 value={stock}
                 onChange={handleStockChange}
             />
         </div>
-        <button type="submit">edit</button>
-        
-        </form>
-        <button onClick={()=>navigate("/dashboard")}>cancel</button>
+        <Container className="mt-3 d-flex gap-3">
+            <Button variant="dark" type="submit">Edit</Button>
+            <Button variant="dark" onClick={()=>navigate("/dashboard")}>Cancel</Button>
+            <Button variant="dark">Delete</Button>
+        </Container>
+        </Form>
+       </Container>
     </div>)
 }
     

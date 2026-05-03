@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom"
 function ItemTable({ items }) {
   const navigate = useNavigate()
   return (
-    <table>
+    <div className="table-wrapper">
+      <table className="dashboard-table">
       <thead>
         <tr>
           <th>Item</th>
           <th>Category</th>
           <th>Stock</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -20,10 +22,12 @@ function ItemTable({ items }) {
             <td>{item.item_name}</td>
             <td>{item.category?.categoryName}</td>
             <td>{item.stock}</td>
+            <td></td>
           </tr>
         ))}
       </tbody>
-    </table>
+    </table> </div>
+    
   )
 }
 export default ItemTable

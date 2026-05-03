@@ -1,0 +1,39 @@
+body {
+  background-color: ghostwhite;
+}
+.dashboard-table {
+  width: 100%;
+  background-color: white;
+  font-size: 20px;
+}
+
+.dashboard-table thead {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.dashboard-table th {
+  padding: 5px 20px;
+  text-align: left;
+  font-weight: 800;
+}
+
+.dashboard-table td {
+  padding: 24px 22px;
+  border: 2px solid #ddd;
+  height: 80px;
+}
+
+.dashboard-table tbody tr {
+  cursor: pointer;
+}
+
+.dashboard-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+
+.btn-dark:hover {
+  background-color: white;
+  color: black;
+}
