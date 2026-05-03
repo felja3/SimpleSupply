@@ -1,7 +1,7 @@
 # Simple Supply - warehouse management system
 
-<img width="863" height="394" alt="supply_simple_goal" src="https://github.com/user-attachments/assets/23be9e12-61f7-414d-94b4-8a95624922b2" />
-Templated of future frontend.
+<img width="1439" height="650" alt="bootstrap_dashboard" src="https://github.com/user-attachments/assets/2362f9ce-b18f-44d1-bb3f-7f3d4c27b10e" />
+Current version
 
 ### User Stories: 
 
@@ -74,7 +74,25 @@ By clicking on a row in a dashboard a new page is opened. On this page is shown
 * edit button to submit
 By clicking edit button PUT method is called, which was implemented in itemSerivce in both frontend and backend.
 
+### Seventh Commit #7
 
+In this step design was implemented with react-bootstrap and css. 
+Almost everything was wrapped in a container and made visually pleasing. 
+
+Was edited
+*Add page
+*Edit page
+*Main dashboard 
+
+Results :
+<img width="450" height="385" alt="edit_bootstrap" src="https://github.com/user-attachments/assets/5d86b6ed-77db-4f18-8bf9-6c3207ca34a4" />
+<img width="442" height="389" alt="add_bootstrap" src="https://github.com/user-attachments/assets/5c688a8f-8193-4478-8668-b034be203a8d" />
+
+Future tasks:
+
+* Add pagination 
+* Add sorting by category functionality for table
+* Add more parameters as Status, Description, etc
 
 
 
