@@ -9,25 +9,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/items")
 @CrossOrigin(origins = "http://localhost:5173",
-            methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
+            methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class ItemController {
 
-    public final ItemService dashboard;
-    public  ItemController(ItemService dashboard){
-        this.dashboard = dashboard;
+    public final ItemService service;
+    public  ItemController(ItemService service){
+        this.service = service;
     }
 
 
     @GetMapping
     public List<Item> getAllItems(){
-        return dashboard.getAllItems();
+        return service.getAllItems();
     }
     @PostMapping("/addItem")
     public Item addItem (
             @RequestParam String name,
             @RequestParam String categoryName,
             @RequestParam int stock){
-        return dashboard.addItem(name,categoryName,stock);
+        return service.addItem(name,categoryName,stock);
     }
     @PutMapping("/updateItem/{id}")
     public Item updateItem(
@@ -35,6 +35,10 @@ public class ItemController {
             @RequestParam String name,
             @RequestParam String categoryName,
             @RequestParam int stock) {
-        return dashboard.updateItem(id, name, categoryName, stock);
+        return service.updateItem(id, name, categoryName, stock);
+    }
+    @DeleteMapping("/deleteItem/{id}")
+    public void deleteItem(@PathVariable Long id) {
+         service.deleteItem(id);
     }
 }

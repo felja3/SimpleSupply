@@ -64,4 +64,10 @@ public class ItemService {
         item.setStock(stock);
         return repository.save(item);
     }
+    public void deleteItem(Long id) {
+        Item item = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Item not found"));
+        repository.delete(item);
+
+    }
 }
