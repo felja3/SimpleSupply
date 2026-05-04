@@ -19,3 +19,8 @@ export async function updateItem(id, name, category, stock) {
   })
   return response.json()
 }
+
+export async function deleteItem(id){
+  const deleteItem_URL = `http://localhost:8080/items/deleteItem/${id}`
+  const response = await fetch (deleteItem_URL, {method : "DELETE"})
+}

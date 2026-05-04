@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
-import { updateItem } from "../services/itemService"
+import { updateItem, deleteItem } from "../services/itemService"
 import {Form,Button, Container}  from "react-bootstrap"
 
 function EditItem(){
@@ -29,6 +29,11 @@ function handleNameChange(event){
     function handleStockChange(event){
     setStock(Number(event.target.value))
   }
+  async function itemDelete(id) {
+    await deleteItem(id)
+    navigate("/")
+  }
+
 
 return(
     <div> 
@@ -62,7 +67,7 @@ return(
         <Container className="mt-3 d-flex gap-3">
             <Button variant="dark" type="submit">Edit</Button>
             <Button variant="dark" onClick={()=>navigate("/dashboard")}>Cancel</Button>
-            <Button variant="dark">Delete</Button>
+            <Button variant="dark" onClick={()=>itemDelete(item.item_id)}>Delete</Button>
         </Container>
         </Form>
        </Container>
