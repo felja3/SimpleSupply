@@ -1,5 +1,5 @@
+const getItems_URL = "http://localhost:8080/items"
 export async function getItems() {
-    const getItems_URL = "http://localhost:8080/items"
     const response = await fetch(getItems_URL)
     return response.json()
 }

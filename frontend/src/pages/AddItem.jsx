@@ -9,7 +9,7 @@ function AddItem() {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [stock, setStock] = useState(0);
-  const navitage = useNavigate()
+  const navigate = useNavigate()
   async function handleSubmit(event) {
     event.preventDefault()
     await addItem(name, category, stock)

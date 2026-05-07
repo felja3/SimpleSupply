@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import { updateItem, deleteItem } from "../services/itemService"
 import {Form,Button, Container}  from "react-bootstrap"
+import ConfirmEditModal from "../components/modal"
 
 function EditItem(){
 const navigate = useNavigate()
@@ -14,10 +15,15 @@ console.log(item)
 const [name, setName] = useState(item.item_name);
 const [category, setCategory] = useState(item.category.categoryName);
 const [stock, setStock] = useState(item.stock);
+const [showConfirmModal, setShowConfirmModal] = useState(false);
 
-async function handleSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault()
+  setShowConfirmModal(true)
+}
+async function confirmEdit(){
   await updateItem(item.item_id, name, category, stock)
+    setShowConfirmModal(false)
   navigate("/")
 }
 function handleNameChange(event){
@@ -33,6 +39,8 @@ function handleNameChange(event){
     await deleteItem(id)
     navigate("/")
   }
+
+
 
 
 return(
@@ -71,6 +79,10 @@ return(
         </Container>
         </Form>
        </Container>
+       <ConfirmEditModal
+        show={showConfirmModal}
+        onCancel={()=> setShowConfirmModal(false)}
+        onSubmit={confirmEdit}/>
     </div>)
 }
     
