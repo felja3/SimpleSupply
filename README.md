@@ -107,8 +107,9 @@ api's tested :
 * deleting an item
 * updating an item
 
+### Commit #10
 
-
+Added Modal to the editItem jsx as a confirmation step to edit an item. 
 
 
   
