@@ -28,29 +28,23 @@ public class ItemService {
         Item item = new Item();
         item.setItem_name(name);
         item.setStock(stock);
-
-        Optional<Category> optionalCategory = categoryRepository.findByCategoryName(categoryName);
-        Category category;
-
-        if(optionalCategory.isPresent()){
-           category = optionalCategory.get();
-        }else {
-            Category newCategory = new Category();
-            newCategory.setCategoryName(categoryName);
-            category = categoryRepository.save(newCategory);
-        }
-
-        item.setCategory(category);
+        item.setCategory(imjacategorii(categoryName));
         return repository.save(item);
     }
-
-
     public Item updateItem(Long id, String name, String categoryName, int stock) {
-        Item item = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Item not found"));
-
-        Optional<Category> optionalCategory = categoryRepository.findByCategoryName(categoryName);
+        Item item = repository.getById(id);
+        item.setItem_name(name);
+        item.setCategory(imjacategorii(categoryName));
+        item.setStock(stock);
+        return repository.save(item);
+    }
+    public void deleteItem(Long id) {
+        Item item = repository.getById(id);
+        repository.delete(item);
+    }
+    public Category imjacategorii(String categoryName){
         Category category;
+        Optional<Category> optionalCategory = categoryRepository.findByCategoryName(categoryName);
 
         if(optionalCategory.isPresent()){
             category = optionalCategory.get();
@@ -59,15 +53,6 @@ public class ItemService {
             newCategory.setCategoryName(categoryName);
             category = categoryRepository.save(newCategory);
         }
-        item.setItem_name(name);
-        item.setCategory(category);
-        item.setStock(stock);
-        return repository.save(item);
-    }
-    public void deleteItem(Long id) {
-        Item item = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Item not found"));
-        repository.delete(item);
-
+        return category;
     }
 }

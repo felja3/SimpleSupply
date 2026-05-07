@@ -13,7 +13,7 @@ function AddItem() {
   async function handleSubmit(event) {
     event.preventDefault()
     await addItem(name, category, stock)
-    navitage("/")
+    navigate("/")
   }
     function handleNameChange(event){
     setName(event.target.value)
@@ -58,7 +58,7 @@ function AddItem() {
 
             <Container className="mt-3 d-flex gap-3" >
             <Button variant="dark"type="submit">Create</Button>
-            <Button variant="dark"type="button"onClick={()=>navitage("/")}>Back</Button>
+            <Button variant="dark"type="button"onClick={()=>navigate("/")}>Back</Button>
             </Container>
             
 

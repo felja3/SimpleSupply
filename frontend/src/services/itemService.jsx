@@ -1,6 +1,5 @@
-const getItems_URL = "http://localhost:8080/items"
-
 export async function getItems() {
+    const getItems_URL = "http://localhost:8080/items"
     const response = await fetch(getItems_URL)
     return response.json()
 }
@@ -9,7 +8,6 @@ export async function addItem(name, category, stock){
      `http://localhost:8080/items/addItem?name=${encodeURIComponent(name)}&categoryName=${encodeURIComponent(category)}&stock=${encodeURIComponent(stock)}`
 
     const response = await fetch(addItem_URL, {method: "POST"})
-    return response.json()
 }
 export async function updateItem(id, name, category, stock) {
   const updateItem_URL =
@@ -17,7 +15,6 @@ export async function updateItem(id, name, category, stock) {
   const response = await fetch(updateItem_URL, {
     method: "PUT"
   })
-  return response.json()
 }
 
 export async function deleteItem(id){
