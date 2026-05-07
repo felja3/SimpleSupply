@@ -98,6 +98,15 @@ Future tasks:
 
 The delete-item logic is added to the editItem and itemService classes in the frontend. As well as in the backend.
 
+### Commit #9
+
+Tests of controller class were added with coverage of 80%
+
+api's tested :
+* adding item
+* deleting an item
+* updating an item
+
 
 
 
